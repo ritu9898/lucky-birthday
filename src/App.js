@@ -62,50 +62,63 @@ class App extends React.Component {
           <div className="container">
             <h3>Is your birthday lucky ?</h3>
             <div className="grid">
-              <div className="row">
-                <div className="col-md-3"></div>
-                <div className="col-md-3">
-                  <p>Date Of Birth: </p>
-                </div>
-                <div className="col-md-3">
-                  <div className="input-group mb-3">
-                    <input type="date" id="birthday" name="birthday" className="form-control" onChange={this.changeDOB.bind(this)} />
-                  </div>
-                </div>
-              </div>
-              
-              <div className="row">
-                <div className="col-md-3"></div>
-                <div className="col-md-3">
-                  <p>Lucky Number: </p>
-                </div>
-                <div className="col-md-3">
-                  <div className="input-group mb-3">
-                    <input type="number" className="form-control" placeholder="Number" min="1" max="99999"  onChange={this.changeNumber.bind(this)} />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <button type="button" className="btn btn-outline-primary" onClick={this.checkLucky}>Check Number</button>
-              </div>
-              <div className="ans">
-              {(() => {
-                if (this.state.done == false) {
-                  return (
-                    <h2><span></span> </h2>
-                  )
-                }
-                else if (this.state.isLucky) {
-                  return (
-                    <h2>Hurray! This number is lucky for you.<span></span>&#127882; </h2>
-                  )
-                } else if (this.state.isLucky == false) {
-                  return (
-                    <h2>Umm! <span>&#129300;</span>  This number doesn't seem to be lucky for you.</h2>
-                  )
-                } 
-              })()}
-              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <div className="">
+                      <td>
+                        <div className="">
+                          <p>Date Of Birth: </p>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="">
+                          <div className="input-group mb-3">
+                            <input type="date" id="birthday" name="birthday" className="form-control" onChange={this.changeDOB.bind(this)} />
+                          </div>
+                        </div>
+                      </td>
+                    </div>
+                  </tr>  
+                  <tr>
+                    <div className="">
+                      <td>
+                        <div className="">
+                          <p>Lucky Number: </p>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="">
+                          <div className="input-group mb-3">
+                            <input type="number" className="form-control" placeholder="Number" min="1" max="99999"  onChange={this.changeNumber.bind(this)} />
+                          </div>
+                        </div>
+                        </td>
+                      </div>
+                      <div>
+                        <button type="button" className="btn btn-outline-primary" onClick={this.checkLucky}>Check Number</button>
+                      </div>
+                      <div className="ans">
+                      {(() => {
+                        if (this.state.done == false) {
+                          return (
+                            <h2><span></span> </h2>
+                          )
+                        }
+                        else if (this.state.isLucky) {
+                          return (
+                            <h2>Hurray! This number is lucky for you.<span></span>&#127882; </h2>
+                          )
+                        } else if (this.state.isLucky == false) {
+                          return (
+                            <h2>Umm! <span>&#129300;</span>  This number doesn't seem to be lucky for you.</h2>
+                          )
+                        } 
+                      })()}
+                    </div>
+                  </tr>
+                </tbody>
+              </table>
             </div>  
           </div>
         </header>
